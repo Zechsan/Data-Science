@@ -23,7 +23,7 @@ There are a total of 3 columns and 1846 rows and the variables are Dataset, x an
 First let's plot the data in the dino dataset:
 
 ```{r plot-dino, fig.height=3, fig.width=6}
-dino_data <- datasaurus_dozen
+dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
@@ -42,36 +42,41 @@ dino_data %>%
 
 ### Exercise 3
 
-(Add code and narrative as needed. Note that the R chunks are labeled with `plot-star` and `cor-star` to provide spaces to place the code for plotting and calculating the correlation coefficient. To finish, remember to clean up the narrative by removing these instructions.)
+Star Plotting
 
 
 
 ```{r plot-star}
-dino_data <- datasaurus_dozen %>%
+plot_star <- datasaurus_dozen %>%
   filter(dataset == "star")
-ggplot(data = dino_star, mapping = aes(x = x, y = y)) +
+ggplot(data = plot_star, mapping = aes(x = x, y = y)) +
   geom_point()
 
 ```
 
-I'm some text, you should replace me with more meaningful text...
+And next calculate the correlation between `x` and `y` in this dataset:
  
 ```{r cor-star}
-
+plot_star %>%
+  summarize(r = cor(x, y))
 
 ```
 
 ### Exercise 4
 
-(Add code and narrative as needed. Note that two R chunks are given but they are not labeled. Use the convention from above to name them appropriately.)
+Plot for Circle
 
-```{r}
-
+```{r plot-circle}
+plot_circle <- datasaurus_dozen %>%
+  filter(dataset == "circle")
+ggplot(data = plot_circle, mapping = aes(x = x, y = y)) +
+  geom_point()
 
 ```
-
-```{r}
-
+And next calculate the correlation between `x` and `y` in this dataset:
+```{r cor-circle}
+plot_circle %>%
+  summarize(r = cor(x, y))
 
 ```
 
