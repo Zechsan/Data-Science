@@ -36,6 +36,10 @@ And next calculate the correlation between `x` and `y` in this dataset:
 ```{r cor-dino}
 dino_data %>%
   summarize(r = cor(x, y))
+## # A tibble: 1 x 1
+## r
+## <dbl>
+## 1 -0.0645
 ```
 
 ### Exercise 3
