@@ -1,0 +1,54 @@
+---
+title: "Lists - In Class Exercises"
+author: "Gaspar Sanchez"
+date: "DATA 2401"
+output: html_document
+
+---
+
+# Exercises: 
+
+Make a list that contains the information on a single playing card. Suit, face, and value. 
+
+```{r}
+card_info<- list(suit = c("club"),face =c("jack"),value =c(11))
+card_info
+```
+
+
+Make a second list where each element contains all the options for suit, face, and value, respectively. 
+
+```{r}
+card_info_pos<- list(
+  suit=c("clubs","spades","hearts","diamonds"),
+  face=c("Ace","2","3","4","5","6","7","8","9","10","Jack","Queen","King"),
+  value=1:13
+)
+
+```
+
+
+If `Newlist <- list(a=1:10, b="Good morning", c="Hi")`, write an R statement that will add 1 to each element of the first vector in Newlist.
+
+```{r}
+Newlist <- list(a=1:10, b="Good morning", c="Hi")
+Newlist$a<-Newlist$a+1
+Newlist
+```
+
+If `b <- list(a=1:10, c="Hello", d="AA")`, write an R expression that will give all elements of the first vector of b, except the second, and write another that returns only elements of `a` that are greater than 7.
+
+```{r}
+b <- list(a=1:10, c="Hello", d="AA")
+b$a[-2]
+b$a[b$a>7]
+
+```
+
+Let `x <- list(a=5:10, c="Hello", d="AA")`, write an R statement to add a new item z = "NewItem" to the list x.
+
+```{r}
+x <- list(a=5:10, c="Hello", d="AA")
+x$z= "NewItem"
+x 
+```
